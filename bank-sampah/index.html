@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Sampah Hijau Lestari</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGASI ===== -->
+  <header class="header">
+    <div class="container header-isi">
+      <a href="#beranda" class="logo">Bank Sampah Green Generation</a>
+      <nav>
+        <a href="#tentang">Tentang</a>
+        <a href="#cara">Cara Kerja</a>
+        <a href="#harga">Harga</a>
+        <a href="#hitung">Hitung</a>
+        <a href="#daftar">Daftar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== BERANDA ===== -->
+    <section id="beranda" class="hero">
+      <div class="container">
+        <h1>Sampah dipilah, tabungan bertambah.</h1>
+        <p>Setor sampah plastik, kertas, dan logam ke bank sampah. Setiap kilo dihargai dan masuk ke buku tabungan Anda.</p>
+        <a href="#daftar" class="tombol">Daftar jadi nasabah</a>
+      </div>
+    </section>
+
+    <!-- ===== TENTANG ===== -->
+    <section id="tentang" class="bagian">
+      <div class="container">
+        <h2>Apa itu bank sampah?</h2>
+        <p class="lead">Bank sampah adalah tempat menyetor sampah yang sudah dipilah. Petugas menimbang, mencatat, lalu mengubahnya menjadi saldo tabungan. Sampah yang masih bernilai dikirim ke pengepul untuk didaur ulang.</p>
+
+        <div class="angka">
+          <div><strong id="angka-nasabah">0</strong><span>nasabah aktif</span></div>
+          <div><strong id="angka-kg">0</strong><span>kg sampah terkumpul</span></div>
+          <div><strong id="angka-rupiah">0</strong><span>rupiah dibayarkan</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CARA KERJA ===== -->
+    <section id="cara" class="bagian gelap">
+      <div class="container">
+        <h2>Cara menabung sampah</h2>
+        <ol class="langkah">
+          <li><b>Pilah di rumah.</b> Pisahkan plastik, kertas, kaca, dan logam. Cuci bila perlu.</li>
+          <li><b>Bawa ke bank sampah.</b> Buka setiap Sabtu pukul 08.00 sampai 11.00.</li>
+          <li><b>Timbang dan catat.</b> Petugas menimbang dan mencatat berat per jenis.</li>
+          <li><b>Saldo bertambah.</b> Tabungan bisa diambil setiap 3 bulan atau dipakai untuk sembako.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== DAFTAR HARGA ===== -->
+    <section id="harga" class="bagian">
+      <div class="container">
+        <h2>Harga sampah per kilogram</h2>
+        <div class="tabel-wrap">
+          <table>
+            <thead>
+              <tr><th>Jenis sampah</th><th>Contoh</th><th>Harga / kg</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Botol plastik (PET)</td><td>Botol air mineral</td><td>Rp 3.000</td></tr>
+              <tr><td>Kertas dan kardus</td><td>Koran, kardus, buku bekas</td><td>Rp 1.500</td></tr>
+              <tr><td>Kaleng logam</td><td>Kaleng minuman, kaleng susu</td><td>Rp 5.000</td></tr>
+              <tr><td>Botol kaca</td><td>Botol sirup, botol kecap</td><td>Rp 1.000</td></tr>
+              <tr><td>Minyak jelantah</td><td>Minyak goreng bekas</td><td>Rp 4.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KALKULATOR ===== -->
+    <section id="hitung" class="bagian abu">
+      <div class="container sempit">
+        <h2>Hitung tabungan Anda</h2>
+        <p class="lead">Pilih jenis sampah dan isi beratnya. Perkiraan saldo muncul di bawah.</p>
+
+        <div class="kartu">
+          <label for="jenis">Jenis sampah</label>
+          <select id="jenis">
+            <option value="3000">Botol plastik (Rp 3.000/kg)</option>
+            <option value="1500">Kertas dan kardus (Rp 1.500/kg)</option>
+            <option value="5000">Kaleng logam (Rp 5.000/kg)</option>
+            <option value="1000">Botol kaca (Rp 1.000/kg)</option>
+            <option value="4000">Minyak jelantah (Rp 4.000/kg)</option>
+          </select>
+
+          <label for="berat">Berat (kg)</label>
+          <input type="number" id="berat" min="0" step="0.1" placeholder="Contoh: 2.5">
+
+          <button id="tombol-hitung" class="tombol">Hitung</button>
+          <p id="hasil" class="hasil" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FORM PENDAFTARAN ===== -->
+    <section id="daftar" class="bagian">
+      <div class="container sempit">
+        <h2>Daftar jadi nasabah</h2>
+        <form id="form-daftar" class="kartu" novalidate>
+          <label for="nama">Nama lengkap</label>
+          <input type="text" id="nama" placeholder="Nama Anda">
+
+          <label for="hp">Nomor HP</label>
+          <input type="tel" id="hp" placeholder="08xxxxxxxxxx">
+
+          <label for="alamat">Alamat</label>
+          <textarea id="alamat" rows="3" placeholder="Alamat rumah"></textarea>
+
+          <button type="submit" class="tombol">Kirim pendaftaran</button>
+          <p id="pesan-form" class="hasil" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Bank Sampah Green Generation. Jl. Melati No. 12, Indonesia.</p>
+      <p>Tugas PTI. Dibuat dengan HTML, CSS, dan JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
